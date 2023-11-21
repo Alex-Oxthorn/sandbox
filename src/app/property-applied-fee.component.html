@@ -1,0 +1,14 @@
+<forge-text-field (click)="$event.stopPropagation()" density="dense">
+  <input
+    [disabled]="disabled"
+    aria-label="applied fee amount"
+    type="text"
+    [(ngModel)]="value"
+    (blur)="updatedAppliedAmount($event)"
+  />
+  <forge-circular-progress
+    *ngIf="isUpdating"
+    class="spinner"
+    slot="trailing"
+  ></forge-circular-progress>
+</forge-text-field>
