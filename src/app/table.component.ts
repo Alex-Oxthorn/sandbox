@@ -54,11 +54,6 @@ export class TestTableComponent {
       header: 'Fee Amount',
       property: 'feeAmount',
       stopCellTemplateClickPropagation: true,
-      template: (
-        _index: number,
-        _el: any,
-        data: IPropertyManagementDataRow
-      ): HTMLElement | undefined => this._createAppliedField(data, _index),
     },
   ];
   private _dynamicComponentCache = new Map<

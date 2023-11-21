@@ -1,1 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@tylertech/forge/dist/forge-core.css";
+@use "@tylertech/forge/dist/forge.css";
+@use "@tylertech/forge/styles/theme/theme-dark" as forge-theme-dark;

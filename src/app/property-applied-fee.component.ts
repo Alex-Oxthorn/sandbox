@@ -5,7 +5,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { finalize } from 'rxjs/operators';
+import { finalize, tap } from 'rxjs/operators';
 import {
   ForgeTextFieldModule,
   ForgeCircularProgressModule,
@@ -46,6 +46,7 @@ export class PropertyAppliedFeeComponent implements OnInit {
     this._service
       .updateFee(this.value, this.feeId)
       .pipe(
+        tap(res => console.log('result', { res, event })),
         finalize(() => {
           this.disabled = false;
           this.isUpdating = false;

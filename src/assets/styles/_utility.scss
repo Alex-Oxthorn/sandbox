@@ -1,0 +1,32 @@
+$baseUnit: 16px;
+$spacingRules: (
+  m: "margin",
+  ml: "margin-left",
+  mr: "margin-right",
+  mb: "margin-bottom",
+  mt: "margin-top",
+  p: "padding",
+  pl: "padding-left",
+  pr: "padding-right",
+  pt: "padding-top",
+  pb: "padding-bottom"
+);
+$spacing: (
+  50: $baseUnit * 0.5,
+  100: $baseUnit * 1,
+  150: $baseUnit * 1.5,
+  200: $baseUnit * 2,
+  250: $baseUnit * 2.5,
+  300: $baseUnit * 3,
+  400: $baseUnit * 4
+);
+
+@mixin spacing-rules() {
+  @each $name, $attribute in $spacingRules {
+    @each $modifier, $value in $spacing {
+      .#{$name}-#{$modifier} {
+        #{$attribute}: $value;
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import {
   IPropertyManagementDataRow,
   IPropertyManagementDetail,
 } from './interfaces';
+import { delay } from 'rxjs/operators';
 
 @Injectable()
 export class PropertyManagementService {
@@ -24,6 +25,6 @@ export class PropertyManagementService {
 
   public updateFee(appliedFee: number, feeId: string): Observable<unknown> {
 
-    return of('succeeded').pipe();
+    return of('succeeded').pipe(delay(5000));
   }
 }
